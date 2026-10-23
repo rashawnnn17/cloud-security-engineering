@@ -79,3 +79,18 @@ Reproduce this prompt verbatim in each weekly recommendation and remind the lear
 - `git diff --cached --stat` reported four files and 165 insertions. `git diff --cached --check` passed with no output (exit code 0).
 - This progress entry was added after verification and must be restaged before committing.
 - Next task: learner restages PROGRESS.md, makes the agreed first setup commit, and verifies it with `git log -1 --oneline` and `git status --short --branch`. No commit or upload has been performed by the assistant. Remote configuration and push remain unfinished.
+
+## First commit verified — 2026-10-23
+
+- `git log -1 --oneline` returned `2a75754 Initialize cloud security engineering project`.
+- `git status --short --branch` returned only `## main`, verifying a clean working tree before this progress update.
+- `git remote -v` returned no output: the local repository is not yet linked to GitHub.
+- This required progress update creates a new local change after the verified commit; it is not included in 2a75754.
+- Next task: learner adds the GitHub HTTPS URL as origin and verifies it with `git remote -v`. Adding a remote stores an address locally and does not authenticate or upload files. Discuss Git authentication before the first push. Upload remains unverified; Terraform tasks remain unfinished.
+
+## GitHub remote verified — 2026-10-23
+
+- `git remote -v` returned origin with https://github.com/rashawnnn17/cloud-security-engineering.git for both fetch and push.
+- Latest commit remains 2a75754. Status shows main and only PROGRESS.md modified, as expected from progress tracking.
+- Next task: learner commits the progress updates, then runs `git push -u origin main` after understanding HTTPS authentication. Existing Windows Git Credential Manager may use a browser sign-in; the connected GitHub plugin does not prove local Git authentication. No credentials should be pasted into chat or committed.
+- Completion criteria: push succeeds and local HEAD matches the main branch on GitHub; upstream tracking is verified. No push has yet been verified.
