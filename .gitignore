@@ -30,3 +30,10 @@ application_default_credentials.json
 .venv/
 __pycache__/
 *.py[cod]
+
+# Personal learning notes
+.local-notes/
+
+# Local learning guidance and progress
+/AGENTS.md
+/PROGRESS.md
